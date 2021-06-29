@@ -23,7 +23,7 @@ export default class Queue {
     }
 
     get front() {
-        return this.#queue[this.#queue.length - 1];
+        return this.#queue.slice().reverse()[0];
     }
 
     // Informs if the queue is empty
@@ -33,7 +33,7 @@ export default class Queue {
 
     // Return the queue
     get value() {
-        return this.#queue;
+        return this.#queue.slice().reverse();
     }
 
     // Return the queue's size
