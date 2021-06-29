@@ -6,12 +6,13 @@ export default class Stack {
     }
 
     // Add item to stack
-    push(itemToPush) {
+    stackUp(itemToPush) {
         return this.#stack.push(itemToPush);
     }
 
     // Remove item from stack
-    pop() {
+    unstack() {
+        if (this.isEmpty) { throw new Error("Can't remove from empty stack") };
         return this.#stack.pop();
     }
 

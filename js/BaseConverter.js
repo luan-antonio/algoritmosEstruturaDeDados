@@ -7,12 +7,12 @@ export default class BaseConverter {
         let binaryString = '';
 
         while (decimalNumber > 0) {
-            stack.push(Math.floor(decimalNumber % base));
+            stack.stackUp(Math.floor(decimalNumber % base));
             decimalNumber = Math.floor(decimalNumber / base);
         }
 
         while (!stack.isEmpty) {
-            binaryString += digits[stack.pop().toString()];
+            binaryString += digits[stack.unstack().toString()];
         }
 
         return binaryString;
